@@ -1,49 +1,78 @@
-import React from 'react';
+"use client";
+import React from "react";
+import { ShoppingCart, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom"; 
+import MobileNav from "./MobileNav";
+import logoGif from "../../assets/gifs/Frame.gif";
 
 const NavBar = () => {
-    return (
-        <div className="navbar bg-base-100 shadow-sm">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+  return (
+    <nav className="w-full bg-[#1E2433] text-white flex justify-between items-center px-6 lg:px-12 py-3">
+      {/* Left - Logo */}
+      <div className="flex items-center gap-2">
+        <Link to="/">
+          <img
+            src={logoGif}
+            alt="Logo"
+            className="h-10 w-auto cursor-pointer"
+          />
+        </Link>
       </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
-  </div>
-</div>
-    );
+
+      {/* Center - Desktop Nav */}
+      <div className="hidden lg:flex items-center gap-6 bg-[#2A3142] rounded-full px-6 py-2">
+        <Link
+          to="/"
+          className="px-4 py-1.5 rounded-full border border-[#ffffff40] bg-gradient-to-r from-[#6C3EF8] to-[#A35CF8] text-sm font-medium"
+        >
+          Home
+        </Link>
+        <Link to="/about" className="text-sm text-gray-300 hover:text-white">
+          About us
+        </Link>
+        <div className="relative group">
+          <button className="flex items-center text-sm text-gray-300 hover:text-white">
+            Services <ChevronDown className="w-4 h-4 ml-1" />
+          </button>
+          <div className="absolute hidden group-hover:block bg-[#2A3142] rounded-md shadow-md mt-2 w-40 py-2">
+            <Link
+              to="/services/web"
+              className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#3B4254]"
+            >
+              Web Development
+            </Link>
+            <Link
+              to="/services/app"
+              className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#3B4254]"
+            >
+              App Development
+            </Link>
+          </div>
+        </div>
+        <Link to="/white-label" className="text-sm text-gray-300 hover:text-white">
+          White label
+        </Link>
+        <Link to="/contact" className="text-sm text-gray-300 hover:text-white">
+          Contact us
+        </Link>
+      </div>
+
+      {/* Right - Cart + Sign In */}
+      <div className="flex items-center gap-4">
+        <button className="p-3 rounded-full bg-[#2A3142] hover:bg-[#3A4052] transition">
+          <ShoppingCart className="w-5 h-5 text-white" />
+        </button>
+        <button className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-[#6C3EF8] to-[#A35CF8] text-white px-5 py-2 rounded-full border border-[#ffffff40] hover:opacity-90 transition">
+          <span>✨ Sign In</span>
+        </button>
+
+        {/* Mobile Nav */}
+        <div className="lg:hidden">
+          <MobileNav />
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default NavBar;
