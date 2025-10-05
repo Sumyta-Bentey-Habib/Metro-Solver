@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { ShoppingCart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom"; 
