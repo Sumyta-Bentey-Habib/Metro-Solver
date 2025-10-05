@@ -3,6 +3,10 @@ import HomeLayout from "../layouts/HomeLayout";
 import About from "../pages/About";
 import Home from "../pages/Home";
 import ServicesSection from "../pages/ServicesSection";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import Contact from "../pages/Contact";
+import Whitelabel from "../pages/Whitelabel";
 
 const router = createBrowserRouter([
     {
@@ -19,9 +23,27 @@ const router = createBrowserRouter([
                 element:<About/>,
             },
             {
+                path:'/contact',
+                element:<Contact/>,
+
+            },
+            {
                 path:'/services',
                 element:<ServicesSection></ServicesSection>,
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
+            },
+            {
+                path:'/white-label',
+                element:<Whitelabel></Whitelabel>
             }
+
         ]
     },
 

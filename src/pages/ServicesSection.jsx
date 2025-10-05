@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Megaphone,
   PenTool,
@@ -56,6 +56,9 @@ const services = [
 ];
 
 const ServicesSection = () => {
+   useEffect(() => {
+          document.title = "Our Services";
+        }, []);
   return (
     <section className="bg-[#1E2433] text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center mb-12">
