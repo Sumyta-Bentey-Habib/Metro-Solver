@@ -5,13 +5,12 @@ import { Outlet } from 'react-router';
 
 const HomeLayout = () => {
     return (
-        <div>
+        <div className='bg-[#1E2433]'>
         <NavBar></NavBar>
       <div className="flex-grow mb-10">
         <Outlet/>
       </div>
-        <Footer></Footer>
-        
+        <Footer></Footer>    
         </div>
     );
 };

@@ -39,33 +39,17 @@ const NavBar = () => {
         </NavLink>
 
         {/* Services Dropdown */}
-        <div className="relative group">
-          <button className="flex items-center px-4 py-1.5 rounded-full text-sm text-gray-300 hover:text-white border border-transparent">
-            Services <ChevronDown className="w-4 h-4 ml-1" />
-          </button>
-          <div className="absolute hidden group-hover:block bg-[#2A3142] rounded-md shadow-md mt-2 w-40 py-2">
-            <NavLink
-              to="/services/web"
-              className={({ isActive }) =>
-                `block px-4 py-2 text-sm rounded ${
-                  isActive ? "bg-[#3B4254] text-white" : "text-gray-300 hover:bg-[#3B4254]"
-                }`
-              }
-            >
-              Web Development
-            </NavLink>
-            <NavLink
-              to="/services/app"
-              className={({ isActive }) =>
-                `block px-4 py-2 text-sm rounded ${
-                  isActive ? "bg-[#3B4254] text-white" : "text-gray-300 hover:bg-[#3B4254]"
-                }`
-              }
-            >
-              App Development
-            </NavLink>
-          </div>
-        </div>
+        <NavLink
+          to="/services"
+          className={({ isActive }) =>
+            `px-4 py-1.5 rounded-full text-sm font-medium border ${
+              isActive ? "border-[#ffffff40] bg-[#3B4254]" : "border-transparent text-gray-300 hover:text-white hover:border-[#ffffff40]"
+            }`
+          }
+        >
+         Services
+        </NavLink>
+       
 
         <NavLink
           to="/white-label"

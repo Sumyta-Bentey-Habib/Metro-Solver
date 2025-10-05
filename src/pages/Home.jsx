@@ -3,7 +3,7 @@ import SuccessSection from '../components/SuccessSection';
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-[#1E2433]'>
         <SuccessSection></SuccessSection>    
     </div>
   );
