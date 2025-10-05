@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { CalendarDays, Users } from "lucide-react";
 import image from "../assets/images/image.jpg";
-import textgif from "../assets/gifs/Frame 1229.gif";
 const SuccessSection = () => {
   const [activeTab, setActiveTab] = useState("case");
 
@@ -40,18 +39,14 @@ const SuccessSection = () => {
   ];
 
   return (
-    <section className="bg-[#1E2433] text-white py-16 px-6 lg:px-20">
+    <section className="bg-[#0A0A1F] text-white py-16 px-6 lg:px-20">
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-4xl lg:text-5xl font-bold mb-4 flex flex-col items-center gap-2">
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            <span>The</span>
-            <img
-              src={textgif}
-              alt="Animated Text"
-              className="h-15 w-auto inline-block"
-            />
-            <span>Case Studies & Blog</span>
+            The Success Stories
+            <br />
+            Case Studies & Blog
           </div>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto">

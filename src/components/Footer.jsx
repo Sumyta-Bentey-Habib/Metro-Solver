@@ -50,11 +50,11 @@ const Footer = () => {
             <Mail size={15} /> official@metrosolver.com
           </p>
 
-          {/* Currency Dropdown */}
+          {/* Currency Dropdown with glassmorphism */}
           <div className="relative w-60">
             <button
               onClick={() => setOpenDropdown(!openDropdown)}
-              className="w-full bg-[#2A3142] text-gray-300 px-4 py-2 rounded-lg text-sm flex justify-between items-center focus:outline-none"
+              className="w-full bg-white/10 backdrop-blur-md border border-white/20 text-gray-200 px-4 py-2 rounded-lg text-sm flex justify-between items-center focus:outline-none shadow-md"
             >
               <span className="flex items-center gap-2">
                 <img src={selectedCurrency.flag} className="w-4 h-4" alt="flag" />
@@ -64,11 +64,11 @@ const Footer = () => {
             </button>
 
             {openDropdown && (
-              <ul className="absolute mt-1 w-full bg-[#2A3142] text-gray-300 rounded-lg shadow-lg max-h-60 overflow-auto z-10">
+              <ul className="absolute mt-1 w-full bg-white/10 backdrop-blur-md border border-white/20 text-gray-200 rounded-lg shadow-lg max-h-60 overflow-auto z-10">
                 {currencies.map((currency, index) => (
                   <li
                     key={index}
-                    className="px-4 py-2 cursor-pointer hover:bg-[#3a4152] flex items-center gap-2"
+                    className="px-4 py-2 cursor-pointer hover:bg-white/20 transition flex items-center gap-2"
                     onClick={() => {
                       setSelectedCurrency(currency);
                       setOpenDropdown(false);
